@@ -31,8 +31,15 @@ def place_piece(board, turn):
     show_board(board)
 
 def check_board(board):
-    for row in board:
-        for col in row:
-            
-start_game()
 
+    for row in range(len(board)):
+        if(board[row][0]!="#"):
+            if(board[row][0]==board[row][1] and board[row][1]==board[row][2]):
+                return board[row][0]
+
+    for col in range(3):
+        if(board[col][0]!="#"):
+            if(board[col][0]==board[col][1] and board[col][1]==board[col][2]):
+                return board[col][0]
+
+start_game()
